@@ -1,3 +1,36 @@
 spring:
   application:
     name: module-api
+
+  # module-storage:db-jpa ??
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/multimodule
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect # SQL ?? ??
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true # ?? system.out ?? ??
+        dialect: org.hibernate.dialect.H2Dialect # SQL ?? ??
+        use_sql_comments: true # ???? ?? ??? ??
+
+logging:
+  level:
+    org.hibernate.sql: debug
+
+# module-common property ??
+service:
+  message: "My first multi module project"
+
+springdoc: # swagger ??
+  swagger-ui:
+    path: /swagger-ui/index.html
+    groups-order: DESC # path, query, body, response ??? ??
+    tags-sorter: alpha # ??? ??? ??? ??
+    operations-sorter: method  # delete - get - patch - post - put ??? ??, alpha? ???? ??? ??? ?? ??
