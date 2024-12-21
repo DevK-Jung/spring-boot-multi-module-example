@@ -2,5 +2,5 @@ rootProject.name = 'spring-multi-module-example'
 
 include 'module-api'
 include 'module-common'
-include 'module-storage'
-include 'module-infra'
+include 'module-storage:db-jpa'
+include 'module-infra:s3'
